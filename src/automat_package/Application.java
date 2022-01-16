@@ -7,8 +7,6 @@ public class Application {
 
 	public Application() {
 
-		System.out.println("\u20ac");
-		System.out.println("\u1E9E");
 		Costumer.existingCostumer =  new CreateFrame("Neuer Kunde", false, this, true).getCostumer();
 
 		CreateFrame adminCreateFrame = new CreateFrame("Neuer Automat", true, this, true);

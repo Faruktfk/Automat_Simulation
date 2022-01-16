@@ -5,7 +5,7 @@ import java.util.Locale;
 public class Money {
 
 	public static final char SEPARATOR = '.', DECIMAL_SEPARATOR = ',';
-	public static final String MONEYMARK_Bigger = "\u20ac", MONEYMARK_Smaller = "ct";
+	public static final String MONEYMARK_Smaller = "ct", MONEYMARK_Bigger = "\u20ac"; //Euro sign
 	public static final Locale GERMANY = Locale.GERMANY;
 	public static final double[] MONEY_VALUES = new double[] { 0.1, 0.2, 0.5, 1, 2, 5, 10, 20 };
 	public static final String[] MONEY_NAMES = new String[] { "10" + MONEYMARK_Smaller, "20" + MONEYMARK_Smaller, "50" + MONEYMARK_Smaller,
@@ -32,9 +32,9 @@ public class Money {
 		return isCoin;
 	}
 
-	public String getMoneyMark() {
+	private String getMoneyMark() {
 		if (isCoin) {
-			if (value == 2 && value == 1)
+			if (value == 2 || value == 1)
 				return MONEYMARK_Bigger;
 			return MONEYMARK_Smaller;
 		}
